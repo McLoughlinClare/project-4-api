@@ -7,3 +7,9 @@ User.create!([
   { username: "eisacke", firstname: "Emily", lastname: "Isacke" },
   { username: "markyjangles", firstname: "Marc", lastname: "De Vois" }
 ])
+
+School.create!([
+  { name: "Cheney School" },
+  { name: "Evelyn Grace Academy" },
+  { name: "Sir Simon Milton UTC" }  
+  ])
