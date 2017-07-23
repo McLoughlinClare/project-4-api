@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  challenge: one
+  student: one
+  answer: MyText
+  correct: false
+
+two:
+  challenge: two
+  student: two
+  answer: MyText
+  correct: false

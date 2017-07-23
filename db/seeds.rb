@@ -11,5 +11,21 @@ User.create!([
 School.create!([
   { name: "Cheney School" },
   { name: "Evelyn Grace Academy" },
-  { name: "Sir Simon Milton UTC" }  
+  { name: "Sir Simon Milton UTC" }
+  ])
+Topic.create!([
+  { name: "Particles and Radiation"},
+  { name: "Electromagnetic Radiation and Quantum phenomena"},
+  { name: "Current Electricity"},
+  { name: "Mechanics"},
+  { name: "Materials"},
+  { name: "Waves" }
+  ])
+
+Challenge.create!([
+  { title: "Carbon Charge", question: "What is the total charge of a carbon nucleus in electronic charge units?", answer:"+6e", topic_id: 1}
+  ])
+
+Solution.create!([
+  { challenge_id: 1, student_id: 1, answer:"+6e", correct:true}
   ])
