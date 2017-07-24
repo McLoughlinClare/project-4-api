@@ -1,5 +1,6 @@
 class SolutionsController < ApplicationController
   before_action :set_solution, only: [:show, :update, :destroy]
+  skip_before_action :authenticate_user!
 
   # GET /solutions
   def index
@@ -16,6 +17,7 @@ class SolutionsController < ApplicationController
   # POST /solutions
   def create
     @solution = Solution.new(solution_params)
+    @solution.student = current_user
 
     if @solution.save
       render json: @solution, status: :created, location: @solution

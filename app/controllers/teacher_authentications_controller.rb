@@ -1,4 +1,5 @@
 class TeacherAuthenticationsController < ApplicationController
+  skip_before_action :authenticate_user!
   def teacher_register
   teacher = Teacher.new(user_params)
   if teacher.save
