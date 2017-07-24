@@ -14,7 +14,8 @@ class AuthenticationsController < ApplicationController
   def login
     student = Student.find_by_email(params[:email])
     if student && student.authenticate(params[:password])
-      render json: student, status: :ok
+      token = Auth.issue({ id: student.id })
+      render json: { token: token, student: StudentSerializer.new(student) }, status: :ok
     else
       render json: { errors: ["Invalid login credentials."] }, status: 401
     end

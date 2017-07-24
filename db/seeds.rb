@@ -1,18 +1,25 @@
 [User].each do |model|
   ActiveRecord::Base.connection.execute("TRUNCATE #{model.table_name} RESTART IDENTITY CASCADE")
 end
-
-User.create!([
-  { username: "mickyginger", firstname: "Mike", lastname: "Hayden" },
-  { username: "eisacke", firstname: "Emily", lastname: "Isacke" },
-  { username: "markyjangles", firstname: "Marc", lastname: "De Vois" }
-])
-
 School.create!([
   { name: "Cheney School" },
   { name: "Evelyn Grace Academy" },
   { name: "Sir Simon Milton UTC" }
   ])
+
+Teacher.create!([
+  { name: "Miss Baxter", email: "baxter@email.com", password: "password", password_confirmation: "password", school_id: 1 },
+  { name: "Mr O'Connor", email: "oconnor@email.com", password: "password", password_confirmation: "password", school_id: 2 },
+  { name: "Dr Smith", email: "smith@email.com", password: "password", password_confirmation: "password", school_id: 3 }
+])
+
+Student.create!([
+  { first_name: "Khai", last_name: "Taylor", email: "khai@email.com", password: "password", password_confirmation: "password", school_id: 1 },
+  { first_name: "Tessa", last_name: "Micheals", email: "tessa@email.com", password: "password", password_confirmation: "password", school_id: 2 },
+    { first_name: "Kayley", last_name: "Smith", email: "kayley@email.com", password: "password", password_confirmation: "password", school_id: 3 }
+])
+
+
 Topic.create!([
   { name: "Particles and Radiation"},
   { name: "Electromagnetic Radiation and Quantum phenomena"},

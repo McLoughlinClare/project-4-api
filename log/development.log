@@ -1350,3 +1350,1027 @@ puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
   [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1347200930821886805);[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1347200930821886805)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1347200930821886805);[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1347200930821886805)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (159.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_development"[0m
+  [1m[35m (131.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_test"[0m
+  [1m[35m (417.3ms)[0m  [1m[35mCREATE DATABASE "final_project_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (265.5ms)[0m  [1m[35mCREATE DATABASE "final_project_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (21.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1347200930821886805);[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170720085412)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "firstname" character varying, "lastname" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170720085412"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSchools (20170721124715)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "schools" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721124715"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStudents (20170721131934)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "school_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0adebddbd5"
+FOREIGN KEY ("school_id")
+  REFERENCES "schools" ("id")
+)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_students_on_school_id" ON "students"  ("school_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721131934"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTopics (20170722070922)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "topics" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722070922"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateChallenges (20170722071107)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "challenges" ("id" bigserial primary key, "title" character varying, "question" text, "answer" text, "topic_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9a74d7969c"
+FOREIGN KEY ("topic_id")
+  REFERENCES "topics" ("id")
+)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_challenges_on_topic_id" ON "challenges"  ("topic_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722071107"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSolutions (20170722071322)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "solutions" ("id" bigserial primary key, "challenge_id" bigint, "student_id" bigint, "answer" text, "correct" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_fda823a99b"
+FOREIGN KEY ("challenge_id")
+  REFERENCES "challenges" ("id")
+, CONSTRAINT "fk_rails_98c0fdbf64"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_solutions_on_challenge_id" ON "solutions"  ("challenge_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_solutions_on_student_id" ON "solutions"  ("student_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722071322"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeachers (20170722082519)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" bigserial primary key, "title" character varying, "surname" character varying, "email" character varying, "password_digest" character varying, "school_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_579a190d8f"
+FOREIGN KEY ("school_id")
+  REFERENCES "schools" ("id")
+)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_teachers_on_school_id" ON "teachers"  ("school_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722082519"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-24 08:18:13.874571"], ["updated_at", "2017-07-24 08:18:13.874571"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1347200930821886805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (8.0ms)[0m  [1m[35mTRUNCATE users RESTART IDENTITY CASCADE[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "mickyginger"], ["firstname", "Mike"], ["lastname", "Hayden"], ["created_at", "2017-07-24 08:18:14.058994"], ["updated_at", "2017-07-24 08:18:14.058994"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "eisacke"], ["firstname", "Emily"], ["lastname", "Isacke"], ["created_at", "2017-07-24 08:18:14.065648"], ["updated_at", "2017-07-24 08:18:14.065648"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "markyjangles"], ["firstname", "Marc"], ["lastname", "De Vois"], ["created_at", "2017-07-24 08:18:14.069723"], ["updated_at", "2017-07-24 08:18:14.069723"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cheney School"], ["created_at", "2017-07-24 08:18:14.091017"], ["updated_at", "2017-07-24 08:18:14.091017"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Evelyn Grace Academy"], ["created_at", "2017-07-24 08:18:14.095201"], ["updated_at", "2017-07-24 08:18:14.095201"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sir Simon Milton UTC"], ["created_at", "2017-07-24 08:18:14.099948"], ["updated_at", "2017-07-24 08:18:14.099948"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Particles and Radiation"], ["created_at", "2017-07-24 08:18:14.119908"], ["updated_at", "2017-07-24 08:18:14.119908"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Electromagnetic Radiation and Quantum phenomena"], ["created_at", "2017-07-24 08:18:14.124008"], ["updated_at", "2017-07-24 08:18:14.124008"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Current Electricity"], ["created_at", "2017-07-24 08:18:14.127169"], ["updated_at", "2017-07-24 08:18:14.127169"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mechanics"], ["created_at", "2017-07-24 08:18:14.130474"], ["updated_at", "2017-07-24 08:18:14.130474"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Materials"], ["created_at", "2017-07-24 08:18:14.133804"], ["updated_at", "2017-07-24 08:18:14.133804"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Waves"], ["created_at", "2017-07-24 08:18:14.136989"], ["updated_at", "2017-07-24 08:18:14.136989"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "challenges" ("title", "question", "answer", "topic_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Carbon Charge"], ["question", "What is the total charge of a carbon nucleus in electronic charge units?"], ["answer", "+6e"], ["topic_id", 1], ["created_at", "2017-07-24 08:18:14.194089"], ["updated_at", "2017-07-24 08:18:14.194089"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChallenge Load (0.4ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (131.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_development"[0m
+  [1m[35m (131.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_test"[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1347200930821886805);[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170720085412)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "firstname" character varying, "lastname" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170720085412"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSchools (20170721124715)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "schools" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721124715"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStudents (20170721131934)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "school_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0adebddbd5"
+FOREIGN KEY ("school_id")
+  REFERENCES "schools" ("id")
+)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_students_on_school_id" ON "students"  ("school_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721131934"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTopics (20170722070922)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "topics" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722070922"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateChallenges (20170722071107)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "challenges" ("id" bigserial primary key, "title" character varying, "question" text, "answer" text, "topic_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9a74d7969c"
+FOREIGN KEY ("topic_id")
+  REFERENCES "topics" ("id")
+)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_challenges_on_topic_id" ON "challenges"  ("topic_id")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722071107"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSolutions (20170722071322)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "solutions" ("id" bigserial primary key, "challenge_id" bigint, "student_id" bigint, "answer" text, "correct" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_fda823a99b"
+FOREIGN KEY ("challenge_id")
+  REFERENCES "challenges" ("id")
+, CONSTRAINT "fk_rails_98c0fdbf64"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_solutions_on_challenge_id" ON "solutions"  ("challenge_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_solutions_on_student_id" ON "solutions"  ("student_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722071322"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeachers (20170722082519)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" bigserial primary key, "title" character varying, "surname" character varying, "email" character varying, "password_digest" character varying, "school_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_579a190d8f"
+FOREIGN KEY ("school_id")
+  REFERENCES "schools" ("id")
+)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_teachers_on_school_id" ON "teachers"  ("school_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722082519"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-24 08:19:59.842580"], ["updated_at", "2017-07-24 08:19:59.842580"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1347200930821886805)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (130.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_development"[0m
+  [1m[35m (128.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_test"[0m
+  [1m[35m (339.0ms)[0m  [1m[35mCREATE DATABASE "final_project_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (260.9ms)[0m  [1m[35mCREATE DATABASE "final_project_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1347200930821886805);[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170720085412)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "firstname" character varying, "lastname" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170720085412"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSchools (20170721124715)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "schools" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721124715"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStudents (20170721131934)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "school_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0adebddbd5"
+FOREIGN KEY ("school_id")
+  REFERENCES "schools" ("id")
+)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_students_on_school_id" ON "students"  ("school_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721131934"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTopics (20170722070922)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "topics" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722070922"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateChallenges (20170722071107)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "challenges" ("id" bigserial primary key, "title" character varying, "question" text, "answer" text, "topic_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9a74d7969c"
+FOREIGN KEY ("topic_id")
+  REFERENCES "topics" ("id")
+)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_challenges_on_topic_id" ON "challenges"  ("topic_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722071107"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSolutions (20170722071322)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "solutions" ("id" bigserial primary key, "challenge_id" bigint, "student_id" bigint, "answer" text, "correct" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_fda823a99b"
+FOREIGN KEY ("challenge_id")
+  REFERENCES "challenges" ("id")
+, CONSTRAINT "fk_rails_98c0fdbf64"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_solutions_on_challenge_id" ON "solutions"  ("challenge_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_solutions_on_student_id" ON "solutions"  ("student_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722071322"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeachers (20170722082519)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "school_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_579a190d8f"
+FOREIGN KEY ("school_id")
+  REFERENCES "schools" ("id")
+)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_teachers_on_school_id" ON "teachers"  ("school_id")[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722082519"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-24 08:21:00.888641"], ["updated_at", "2017-07-24 08:21:00.888641"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1347200930821886805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.2ms)[0m  [1m[35mTRUNCATE users RESTART IDENTITY CASCADE[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cheney School"], ["created_at", "2017-07-24 08:25:02.261899"], ["updated_at", "2017-07-24 08:25:02.261899"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Evelyn Grace Academy"], ["created_at", "2017-07-24 08:25:02.265404"], ["updated_at", "2017-07-24 08:25:02.265404"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sir Simon Milton UTC"], ["created_at", "2017-07-24 08:25:02.268333"], ["updated_at", "2017-07-24 08:25:02.268333"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "khai@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Khai"], ["last_name", "Taylor"], ["email", "khai@email.com"], ["password_digest", "$2a$10$xgtmj/wDKnBofIlm5s9HWeAE20vN34Ip/Qx8B67hdlzckeRtyB1qm"], ["school_id", 1], ["created_at", "2017-07-24 08:25:02.398161"], ["updated_at", "2017-07-24 08:25:02.398161"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "tessa@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Tessa"], ["last_name", "Micheals"], ["email", "tessa@email.com"], ["password_digest", "$2a$10$lDTP2E/DljE4T2UQ/jNRNuVziRDPNBaGm1pwvA3h15UQIlALxeNHW"], ["school_id", 2], ["created_at", "2017-07-24 08:25:02.480106"], ["updated_at", "2017-07-24 08:25:02.480106"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "kayley@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Kayley"], ["last_name", "Smith"], ["email", "kayley@email.com"], ["password_digest", "$2a$10$8qGxJEDh.rnXEzPMP7zXVejJPpXpFaVFATUxXqqfCuaXl7LEMxERe"], ["school_id", 3], ["created_at", "2017-07-24 08:25:02.568226"], ["updated_at", "2017-07-24 08:25:02.568226"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Particles and Radiation"], ["created_at", "2017-07-24 08:25:02.583795"], ["updated_at", "2017-07-24 08:25:02.583795"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Electromagnetic Radiation and Quantum phenomena"], ["created_at", "2017-07-24 08:25:02.587371"], ["updated_at", "2017-07-24 08:25:02.587371"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Current Electricity"], ["created_at", "2017-07-24 08:25:02.590397"], ["updated_at", "2017-07-24 08:25:02.590397"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mechanics"], ["created_at", "2017-07-24 08:25:02.593391"], ["updated_at", "2017-07-24 08:25:02.593391"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Materials"], ["created_at", "2017-07-24 08:25:02.596382"], ["updated_at", "2017-07-24 08:25:02.596382"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Waves"], ["created_at", "2017-07-24 08:25:02.599392"], ["updated_at", "2017-07-24 08:25:02.599392"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "challenges" ("title", "question", "answer", "topic_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Carbon Charge"], ["question", "What is the total charge of a carbon nucleus in electronic charge units?"], ["answer", "+6e"], ["topic_id", 1], ["created_at", "2017-07-24 08:25:02.621508"], ["updated_at", "2017-07-24 08:25:02.621508"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChallenge Load (0.4ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "solutions" ("challenge_id", "student_id", "answer", "correct", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["challenge_id", 1], ["student_id", 1], ["answer", "+6e"], ["correct", "t"], ["created_at", "2017-07-24 08:25:02.647151"], ["updated_at", "2017-07-24 08:25:02.647151"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.0ms)[0m  [1m[35mTRUNCATE users RESTART IDENTITY CASCADE[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cheney School"], ["created_at", "2017-07-24 08:27:15.779329"], ["updated_at", "2017-07-24 08:27:15.779329"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Evelyn Grace Academy"], ["created_at", "2017-07-24 08:27:15.783611"], ["updated_at", "2017-07-24 08:27:15.783611"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sir Simon Milton UTC"], ["created_at", "2017-07-24 08:27:15.786610"], ["updated_at", "2017-07-24 08:27:15.786610"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeacher Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "teachers" WHERE "teachers"."email" = $1 LIMIT $2[0m  [["email", "baxter@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Miss Baxter"], ["email", "baxter@email.com"], ["password_digest", "$2a$10$MLPbtSmoGNuCzBqj.7b.cOOY/GOyEPX8xeFkOJF0NDptgqEdqNj.a"], ["school_id", 1], ["created_at", "2017-07-24 08:27:15.894771"], ["updated_at", "2017-07-24 08:27:15.894771"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTeacher Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "teachers" WHERE "teachers"."email" = $1 LIMIT $2[0m  [["email", "oconnor@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mr O'Connor"], ["email", "oconnor@email.com"], ["password_digest", "$2a$10$YuQ0iLfGmBNnGE6IKXx2ce3gXQ/vsuMmZUh8m/WTAW7FoUREE1KVi"], ["school_id", 2], ["created_at", "2017-07-24 08:27:15.991731"], ["updated_at", "2017-07-24 08:27:15.991731"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTeacher Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "teachers" WHERE "teachers"."email" = $1 LIMIT $2[0m  [["email", "smith@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr Smith"], ["email", "smith@email.com"], ["password_digest", "$2a$10$AR29VMwOVC/F1Kb6zHhbpeMpSlNk0ynXVXHcDjpk9Vh4DCBohul5e"], ["school_id", 3], ["created_at", "2017-07-24 08:27:16.092020"], ["updated_at", "2017-07-24 08:27:16.092020"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "khai@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (132.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_development"[0m
+  [1m[35m (129.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_test"[0m
+  [1m[35m (257.0ms)[0m  [1m[35mCREATE DATABASE "final_project_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (264.0ms)[0m  [1m[35mCREATE DATABASE "final_project_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1347200930821886805);[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170720085412)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "firstname" character varying, "lastname" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170720085412"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSchools (20170721124715)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "schools" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721124715"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStudents (20170721131934)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "school_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_0adebddbd5"
+FOREIGN KEY ("school_id")
+  REFERENCES "schools" ("id")
+)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_students_on_school_id" ON "students"  ("school_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721131934"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTopics (20170722070922)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "topics" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722070922"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateChallenges (20170722071107)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "challenges" ("id" bigserial primary key, "title" character varying, "question" text, "answer" text, "topic_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9a74d7969c"
+FOREIGN KEY ("topic_id")
+  REFERENCES "topics" ("id")
+)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_challenges_on_topic_id" ON "challenges"  ("topic_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722071107"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSolutions (20170722071322)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "solutions" ("id" bigserial primary key, "challenge_id" bigint, "student_id" bigint, "answer" text, "correct" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_fda823a99b"
+FOREIGN KEY ("challenge_id")
+  REFERENCES "challenges" ("id")
+, CONSTRAINT "fk_rails_98c0fdbf64"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_solutions_on_challenge_id" ON "solutions"  ("challenge_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_solutions_on_student_id" ON "solutions"  ("student_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722071322"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeachers (20170722082519)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "school_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_579a190d8f"
+FOREIGN KEY ("school_id")
+  REFERENCES "schools" ("id")
+)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_teachers_on_school_id" ON "teachers"  ("school_id")[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170722082519"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-24 08:27:44.345402"], ["updated_at", "2017-07-24 08:27:44.345402"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1347200930821886805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.4ms)[0m  [1m[35mTRUNCATE users RESTART IDENTITY CASCADE[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cheney School"], ["created_at", "2017-07-24 08:27:50.578420"], ["updated_at", "2017-07-24 08:27:50.578420"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Evelyn Grace Academy"], ["created_at", "2017-07-24 08:27:50.583686"], ["updated_at", "2017-07-24 08:27:50.583686"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schools" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sir Simon Milton UTC"], ["created_at", "2017-07-24 08:27:50.587157"], ["updated_at", "2017-07-24 08:27:50.587157"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.6ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeacher Exists (2.7ms)[0m  [1m[34mSELECT  1 AS one FROM "teachers" WHERE "teachers"."email" = $1 LIMIT $2[0m  [["email", "baxter@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Miss Baxter"], ["email", "baxter@email.com"], ["password_digest", "$2a$10$LC5b5U.g7nWBmgRvfHliYO8D3QExvEWw4nC1OZaE3rYu7rSGxx4ha"], ["school_id", 1], ["created_at", "2017-07-24 08:27:50.727459"], ["updated_at", "2017-07-24 08:27:50.727459"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTeacher Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "teachers" WHERE "teachers"."email" = $1 LIMIT $2[0m  [["email", "oconnor@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mr O'Connor"], ["email", "oconnor@email.com"], ["password_digest", "$2a$10$U.ZV9PWsivdAYaFU.KF1sOHNZKJpj/ZNW2r0IZBwDPEPd2tCZroiK"], ["school_id", 2], ["created_at", "2017-07-24 08:27:50.824794"], ["updated_at", "2017-07-24 08:27:50.824794"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTeacher Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "teachers" WHERE "teachers"."email" = $1 LIMIT $2[0m  [["email", "smith@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Dr Smith"], ["email", "smith@email.com"], ["password_digest", "$2a$10$DaCBVsiKBs1t5IUyrvqS1eNYAq5kkexs0A9/C3ofPSa7Elte9U2Wm"], ["school_id", 3], ["created_at", "2017-07-24 08:27:50.915426"], ["updated_at", "2017-07-24 08:27:50.915426"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "khai@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Khai"], ["last_name", "Taylor"], ["email", "khai@email.com"], ["password_digest", "$2a$10$uJF3NTS763KCW50RMcSxoONbfT4IFKbUZuYpbAkWoaGuaxNlO/Q6e"], ["school_id", 1], ["created_at", "2017-07-24 08:27:51.023731"], ["updated_at", "2017-07-24 08:27:51.023731"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "tessa@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Tessa"], ["last_name", "Micheals"], ["email", "tessa@email.com"], ["password_digest", "$2a$10$baK/EaaNZhsZGFzwA.XXdOaO59H3v2s/pJrxuFaIsE9qX3yVuueQq"], ["school_id", 2], ["created_at", "2017-07-24 08:27:51.111373"], ["updated_at", "2017-07-24 08:27:51.111373"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "kayley@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Kayley"], ["last_name", "Smith"], ["email", "kayley@email.com"], ["password_digest", "$2a$10$Wrqy7.FHRLKstMYwzxMx0.FCakc8Jxch5U0XyrcG.82vYYt7pFuXa"], ["school_id", 3], ["created_at", "2017-07-24 08:27:51.189540"], ["updated_at", "2017-07-24 08:27:51.189540"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Particles and Radiation"], ["created_at", "2017-07-24 08:27:51.205296"], ["updated_at", "2017-07-24 08:27:51.205296"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Electromagnetic Radiation and Quantum phenomena"], ["created_at", "2017-07-24 08:27:51.210442"], ["updated_at", "2017-07-24 08:27:51.210442"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Current Electricity"], ["created_at", "2017-07-24 08:27:51.214007"], ["updated_at", "2017-07-24 08:27:51.214007"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mechanics"], ["created_at", "2017-07-24 08:27:51.217554"], ["updated_at", "2017-07-24 08:27:51.217554"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Materials"], ["created_at", "2017-07-24 08:27:51.221209"], ["updated_at", "2017-07-24 08:27:51.221209"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "topics" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Waves"], ["created_at", "2017-07-24 08:27:51.224440"], ["updated_at", "2017-07-24 08:27:51.224440"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "challenges" ("title", "question", "answer", "topic_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Carbon Charge"], ["question", "What is the total charge of a carbon nucleus in electronic charge units?"], ["answer", "+6e"], ["topic_id", 1], ["created_at", "2017-07-24 08:27:51.245815"], ["updated_at", "2017-07-24 08:27:51.245815"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChallenge Load (0.4ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "solutions" ("challenge_id", "student_id", "answer", "correct", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["challenge_id", 1], ["student_id", 1], ["answer", "+6e"], ["correct", "t"], ["created_at", "2017-07-24 08:27:51.275565"], ["updated_at", "2017-07-24 08:27:51.275565"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/register" for 127.0.0.1 at 2017-07-24 09:36:09 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"email"=>"emily@isacke.com", "first_name"=>"Emily", "last_name"=>"Isacke", "school_id"=>1, "authentication"=>{"email"=>"emily@isacke.com", "first_name"=>"Emily", "last_name"=>"Isacke", "school_id"=>1}}
+Unpermitted parameter: :authentication
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (1.1ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "emily@isacke.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.35ms)
+Completed 422 Unprocessable Entity in 120ms (Views: 11.7ms | ActiveRecord: 18.1ms)
+
+
+Started POST "/api/register" for 127.0.0.1 at 2017-07-24 09:36:36 +0100
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"email"=>"emily@isacke.com", "first_name"=>"Emily", "last_name"=>"Isacke", "school_id"=>1, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"email"=>"emily@isacke.com", "first_name"=>"Emily", "last_name"=>"Isacke", "school_id"=>1, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Unpermitted parameter: :authentication
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (1.4ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "emily@isacke.com"], ["LIMIT", 1]]
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Emily"], ["last_name", "Isacke"], ["email", "emily@isacke.com"], ["password_digest", "$2a$10$Oeb2CtDdIZp7tBybAVRr/epa1vI.elXtMPqFv7UC6DC5FywHnrqGu"], ["school_id", 1], ["created_at", "2017-07-24 08:36:37.105924"], ["updated_at", "2017-07-24 08:36:37.105924"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Student (0.49ms)
+Completed 200 OK in 138ms (Views: 4.1ms | ActiveRecord: 17.1ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-24 09:37:46 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"emily@isacke.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"emily@isacke.com", "password"=>"[FILTERED]"}}
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "emily@isacke.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Student (0.88ms)
+Completed 200 OK in 99ms (Views: 1.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-24 09:38:52 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"emily@isacke.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"emily@isacke.com", "password"=>"[FILTERED]"}}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "emily@isacke.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Student (0.4ms)
+Completed 200 OK in 88ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-24 09:44:26 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"khai@email.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"khai@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "khai@email.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Student (0.43ms)
+Completed 200 OK in 87ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/challenges" for 127.0.0.1 at 2017-07-24 09:44:26 +0100
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (2.0ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+[active_model_serializers]   [1m[36mTopic Load (1.4ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.43ms)
+Completed 200 OK in 128ms (Views: 99.4ms | ActiveRecord: 20.7ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-24 09:44:41 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"cmc@email.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"cmc@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "cmc@email.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/register" for 127.0.0.1 at 2017-07-24 09:45:09 +0100
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"email"=>"clare@email.com", "first_name"=>"Clare", "last_name"=>"McLoughlin", "school_id"=>2, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"email"=>"clare@email.com", "first_name"=>"Clare", "last_name"=>"McLoughlin", "school_id"=>2, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Unpermitted parameter: :authentication
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "clare@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Clare"], ["last_name", "McLoughlin"], ["email", "clare@email.com"], ["password_digest", "$2a$10$ly7c3/XpZL2.3zhbn3GmTu0OTYZKrAgUKU5/.lB6LYiqLCKPumTDO"], ["school_id", 2], ["created_at", "2017-07-24 08:45:09.450385"], ["updated_at", "2017-07-24 08:45:09.450385"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Student (0.42ms)
+Completed 200 OK in 88ms (Views: 1.0ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-24 09:45:16 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"clare@email.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"clare@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mStudent Load (1.7ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "clare@email.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Student (0.48ms)
+Completed 200 OK in 85ms (Views: 1.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/challenges" for 127.0.0.1 at 2017-07-24 09:45:17 +0100
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (0.4ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+[active_model_serializers]   [1m[36mTopic Load (1.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.53ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/teacher_register" for 127.0.0.1 at 2017-07-24 09:46:21 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/api/teacher_register"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/teacher_register" for 127.0.0.1 at 2017-07-24 09:46:27 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/teacher_register"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/student" for 127.0.0.1 at 2017-07-24 09:46:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/student"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/student" for 127.0.0.1 at 2017-07-24 09:46:38 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/student"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/students" for 127.0.0.1 at 2017-07-24 09:46:40 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/students"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/api/students" for 127.0.0.1 at 2017-07-24 10:10:20 +0100
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/api/students"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/api/student" for 127.0.0.1 at 2017-07-24 10:10:32 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/api/student"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/api/students" for 127.0.0.1 at 2017-07-24 10:11:07 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/api/students"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/students" for 127.0.0.1 at 2017-07-24 10:17:13 +0100
+  
+ActionController::RoutingError (uninitialized constant StudentsController):
+  
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.2) lib/action_dispatch/http/request.rb:82:in `controller_class'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/students" for 127.0.0.1 at 2017-07-24 10:20:11 +0100
+Processing by StudentsController#index as */*
+  Parameters: {"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school_id"=>2, "student"=>{"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "school_id"=>2}}
+  [1m[36mStudent Load (1.9ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+No serializer found for resource: #<Student id: 1, first_name: "Khai", last_name: "Taylor", email: "khai@email.com", password_digest: "$2a$10$uJF3NTS763KCW50RMcSxoONbfT4IFKbUZuYpbAkWoaG...", school_id: 1, created_at: "2017-07-24 08:27:51", updated_at: "2017-07-24 08:27:51">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Student::ActiveRecord_Relation (1.34ms)
+Completed 200 OK in 31ms (Views: 23.5ms | ActiveRecord: 12.2ms)
+
+
+Started POST "/api/register" for 127.0.0.1 at 2017-07-24 10:20:54 +0100
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"email"=>"joe@email.com", "first_name"=>"joe", "last_name"=>"simpson", "school_id"=>2, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"email"=>"joe@email.com", "first_name"=>"joe", "last_name"=>"simpson", "school_id"=>2, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Unpermitted parameter: :authentication
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (0.7ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "joe@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "joe"], ["last_name", "simpson"], ["email", "joe@email.com"], ["password_digest", "$2a$10$zkuy00JSfv9w6SqahpnM9.0bd7YPdO7bauYNpwiTIUKTFG82rE8wq"], ["school_id", 2], ["created_at", "2017-07-24 09:20:54.899450"], ["updated_at", "2017-07-24 09:20:54.899450"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Student (0.58ms)
+Completed 200 OK in 147ms (Views: 3.9ms | ActiveRecord: 13.8ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-24 10:20:59 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"joe@email.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"joe@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "joe@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 0.9ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<AuthenticationsController:0x007fc8dbd99120>):
+  
+app/controllers/authentications_controller.rb:17:in `login'
+Started POST "/api/login" for 127.0.0.1 at 2017-07-24 10:22:14 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"joe@email.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"joe@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "joe@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (uninitialized constant AuthenticationsController::StudentSerializer):
+  
+app/controllers/authentications_controller.rb:18:in `login'
+Started POST "/api/login" for 127.0.0.1 at 2017-07-24 10:24:10 +0100
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"joe@email.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"joe@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "joe@email.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (60.08ms)
+Completed 200 OK in 214ms (Views: 56.4ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/api/challenges" for 127.0.0.1 at 2017-07-24 10:24:11 +0100
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (1.1ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+[active_model_serializers]   [1m[36mTopic Load (1.8ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (38.06ms)
+Completed 200 OK in 65ms (Views: 40.2ms | ActiveRecord: 20.8ms)
+
+
+Started POST "/api/register" for 127.0.0.1 at 2017-07-24 10:38:29 +0100
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"email"=>"cmc@email.com", "name"=>"Miss McLoughlin", "school_id"=>3, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"email"=>"cmc@email.com", "name"=>"Miss McLoughlin", "school_id"=>3, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Unpermitted parameters: :name, :authentication
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSchool Load (1.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudent Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "cmc@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (3.4ms)[0m  [1m[32mINSERT INTO "students" ("email", "password_digest", "school_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "cmc@email.com"], ["password_digest", "$2a$10$HYc2fDdsLQOuuM0uMd1EWORCQymS.tQee/d2M/rJAifz0E/j3puq6"], ["school_id", 3], ["created_at", "2017-07-24 09:38:30.121538"], ["updated_at", "2017-07-24 09:38:30.121538"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered StudentSerializer with ActiveModelSerializers::Adapter::Attributes (1.32ms)
+Completed 200 OK in 189ms (Views: 2.4ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-24 10:38:49 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"cmc@email.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"cmc@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "cmc@email.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mSchool Load (0.6ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.66ms)
+Completed 200 OK in 97ms (Views: 7.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/challenges" for 127.0.0.1 at 2017-07-24 10:38:49 +0100
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (0.7ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+[active_model_serializers]   [1m[36mTopic Load (1.0ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.88ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/challenges" for 127.0.0.1 at 2017-07-24 10:39:27 +0100
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (0.7ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+[active_model_serializers]   [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.53ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/challenges" for 127.0.0.1 at 2017-07-24 10:45:21 +0100
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (1.3ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+[active_model_serializers]   [1m[36mTopic Load (0.8ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.72ms)
+Completed 200 OK in 55ms (Views: 46.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/challenges" for 127.0.0.1 at 2017-07-24 10:49:30 +0100
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (1.3ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+[active_model_serializers]   [1m[36mTopic Load (1.1ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.1ms)
+Completed 200 OK in 21ms (Views: 16.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/challenges" for 127.0.0.1 at 2017-07-24 10:50:16 +0100
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (0.6ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+[active_model_serializers]   [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.34ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/challenges" for 127.0.0.1 at 2017-07-24 10:52:07 +0100
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (0.8ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+[active_model_serializers]   [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.21ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/challenges" for 127.0.0.1 at 2017-07-24 10:52:26 +0100
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (0.5ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+[active_model_serializers]   [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.54ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/challenges" for 127.0.0.1 at 2017-07-24 10:52:44 +0100
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (0.6ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+[active_model_serializers]   [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.22ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/challenges" for 127.0.0.1 at 2017-07-24 10:53:06 +0100
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (0.6ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+[active_model_serializers]   [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.44ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/challenges" for 127.0.0.1 at 2017-07-24 10:53:26 +0100
+Processing by ChallengesController#index as HTML
+  [1m[36mChallenge Load (0.5ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+[active_model_serializers]   [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.55ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.9ms)
+
+

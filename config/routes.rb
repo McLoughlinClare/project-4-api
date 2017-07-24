@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :teachers
+
   scope :api do
     post 'register', to: 'authentications#register'
     post 'login', to: 'authentications#login'
@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     resources :solutions
     resources :challenges
     resources :topics
+    resources :teachers
+    resources :students
   end
 end
