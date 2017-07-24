@@ -7086,3 +7086,61 @@ Processing by StudentsController#index as */*
 Completed 200 OK in 22ms (Views: 19.3ms | ActiveRecord: 2.6ms)
 
 
+Started GET "/api/students" for 127.0.0.1 at 2017-07-24 17:06:32 +0100
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as */*
+  Parameters: {"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school_id"=>2, "student"=>{"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "school_id"=>2}}
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+[active_model_serializers]   [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mSolution Load (0.6ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (111.32ms)
+Completed 500 Internal Server Error in 191ms (ActiveRecord: 20.3ms)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "teacher" or :teachers in model School. Try 'has_many :teachers, :through => :school, :source => <name>'. Is it one of ?):
+  
+app/controllers/students_controller.rb:9:in `index'
+Started GET "/api/schools" for 127.0.0.1 at 2017-07-24 17:08:56 +0100
+Processing by SchoolsController#index as */*
+  Parameters: {"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school_id"=>2, "school"=>{}}
+  [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms)
+
+
+  
+LoadError (Unable to autoload constant SchoolSerializer, expected /Users/claremcloughlin/Development/project-4/final_project_api/app/serializers/school_serializer.rb to define it):
+  
+app/controllers/schools_controller.rb:9:in `index'
+Started GET "/api/schools" for 127.0.0.1 at 2017-07-24 17:09:44 +0100
+Processing by SchoolsController#index as */*
+  Parameters: {"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school_id"=>2, "school"=>{}}
+  [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+[active_model_serializers]   [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 1]]
+[active_model_serializers]   [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 1]]
+[active_model_serializers]   [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 2]]
+[active_model_serializers]   [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 2]]
+[active_model_serializers]   [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 3]]
+[active_model_serializers]   [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (98.11ms)
+Completed 200 OK in 112ms (Views: 99.6ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/api/teachers" for 127.0.0.1 at 2017-07-24 17:11:35 +0100
+Processing by TeachersController#index as */*
+  Parameters: {"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school_id"=>2, "teacher"=>{"email"=>"joe@email.com", "school_id"=>2}}
+  [1m[36mTeacher Load (0.8ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+[active_model_serializers]   [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mStudent Load (4.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "schools" ON "students"."school_id" = "schools"."id" WHERE "schools"."id" = $1[0m  [["id", 1]]
+[active_model_serializers]   [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "schools" ON "students"."school_id" = "schools"."id" WHERE "schools"."id" = $1[0m  [["id", 2]]
+[active_model_serializers]   [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "schools" ON "students"."school_id" = "schools"."id" WHERE "schools"."id" = $1[0m  [["id", 3]]
+[active_model_serializers]   [1m[36mCACHE School Load (0.0ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "schools" ON "students"."school_id" = "schools"."id" WHERE "schools"."id" = $1[0m  [["id", 1]]
+[active_model_serializers]   [1m[36mCACHE School Load (0.0ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "schools" ON "students"."school_id" = "schools"."id" WHERE "schools"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (52.36ms)
+Completed 200 OK in 55ms (Views: 47.1ms | ActiveRecord: 8.0ms)
+
+
