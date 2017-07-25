@@ -12643,3 +12643,175 @@ Completed 200 OK in 132ms (Views: 96.8ms | ActiveRecord: 28.0ms)
 Completed 200 OK in 207ms (Views: 154.1ms | ActiveRecord: 52.3ms)
 
 
+Started GET "/api/students" for 127.0.0.1 at 2017-07-25 11:48:36 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as */*
+  Parameters: {"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school_id"=>2, "student"=>{"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "school_id"=>2}}
+  [1m[36mStudent Load (1.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+[active_model_serializers]   [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mSolution Load (0.6ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 1]]
+[active_model_serializers]   [1m[36mTeacher Load (0.7ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" INNER JOIN "schools" ON "teachers"."school_id" = "schools"."id" WHERE "schools"."id" = $1[0m  [["id", 1]]
+[active_model_serializers]   [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 2]]
+[active_model_serializers]   [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" INNER JOIN "schools" ON "teachers"."school_id" = "schools"."id" WHERE "schools"."id" = $1[0m  [["id", 2]]
+[active_model_serializers]   [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mSolution Load (0.4ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 3]]
+[active_model_serializers]   [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" INNER JOIN "schools" ON "teachers"."school_id" = "schools"."id" WHERE "schools"."id" = $1[0m  [["id", 3]]
+[active_model_serializers]   [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mSolution Load (0.4ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 4]]
+[active_model_serializers]   [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" INNER JOIN "schools" ON "teachers"."school_id" = "schools"."id" WHERE "schools"."id" = $1[0m  [["id", 1]]
+[active_model_serializers]   [1m[36mChallenge Load (0.5ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mChallenge Load (0.4ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mChallenge Load (0.3ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mChallenge Load (0.3ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mChallenge Load (0.3ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mChallenge Load (0.3ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (191.98ms)
+Completed 200 OK in 274ms (Views: 239.6ms | ActiveRecord: 37.0ms)
+
+
+Started GET "/api/students" for 127.0.0.1 at 2017-07-25 11:48:52 +0100
+Processing by StudentsController#index as */*
+  Parameters: {"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school_id"=>2, "student"=>{"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "school_id"=>2}}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+[active_model_serializers]   [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mSolution Load (0.4ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 1]]
+[active_model_serializers]   [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" INNER JOIN "schools" ON "teachers"."school_id" = "schools"."id" WHERE "schools"."id" = $1[0m  [["id", 1]]
+[active_model_serializers]   [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mSolution Load (0.4ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 2]]
+[active_model_serializers]   [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" INNER JOIN "schools" ON "teachers"."school_id" = "schools"."id" WHERE "schools"."id" = $1[0m  [["id", 2]]
+[active_model_serializers]   [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mSolution Load (0.2ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 3]]
+[active_model_serializers]   [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" INNER JOIN "schools" ON "teachers"."school_id" = "schools"."id" WHERE "schools"."id" = $1[0m  [["id", 3]]
+[active_model_serializers]   [1m[36mCACHE School Load (0.0ms)[0m  [1m[34mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 4]]
+[active_model_serializers]   [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" INNER JOIN "schools" ON "teachers"."school_id" = "schools"."id" WHERE "schools"."id" = $1[0m  [["id", 1]]
+[active_model_serializers]   [1m[36mChallenge Load (0.3ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Challenge Load (0.0ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Challenge Load (0.0ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Challenge Load (0.0ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Challenge Load (0.0ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Challenge Load (0.0ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (113.28ms)
+Completed 200 OK in 126ms (Views: 120.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/school" for 127.0.0.1 at 2017-07-25 11:50:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/school"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/schools" for 127.0.0.1 at 2017-07-25 11:50:39 +0100
+Processing by SchoolsController#index as */*
+  Parameters: {"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school_id"=>2, "school"=>{}}
+  [1m[36mSchool Load (0.7ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+[active_model_serializers]   [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 1]]
+[active_model_serializers]   [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 1]]
+[active_model_serializers]   [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 2]]
+[active_model_serializers]   [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 2]]
+[active_model_serializers]   [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 3]]
+[active_model_serializers]   [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 3]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 1]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 4]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 2]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (85.76ms)
+Completed 200 OK in 100ms (Views: 95.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/schools" for 127.0.0.1 at 2017-07-25 11:50:55 +0100
+Processing by SchoolsController#index as */*
+  Parameters: {"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school_id"=>2, "school"=>{}}
+  [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+[active_model_serializers]   [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 1]]
+[active_model_serializers]   [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 1]]
+[active_model_serializers]   [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 2]]
+[active_model_serializers]   [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 2]]
+[active_model_serializers]   [1m[36mTeacher Load (0.9ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 3]]
+[active_model_serializers]   [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (88.68ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 3.9ms)
+
+
+  
+NoMethodError (undefined method `correct_answers' for #<Student:0x007feaf8e46408>):
+  
+app/serializers/school_serializer.rb:7:in `block in total_correct_answers'
+app/serializers/school_serializer.rb:7:in `reduce'
+app/serializers/school_serializer.rb:7:in `total_correct_answers'
+app/controllers/schools_controller.rb:9:in `index'
+Started GET "/api/schools" for 127.0.0.1 at 2017-07-25 11:52:07 +0100
+Processing by SchoolsController#index as */*
+  Parameters: {"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school_id"=>2, "school"=>{}}
+  [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+[active_model_serializers]   [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 1]]
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 1]]
+[active_model_serializers]   [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 2]]
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 2]]
+[active_model_serializers]   [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 3]]
+[active_model_serializers]   [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 3]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 1]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 4]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 2]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (96.81ms)
+Completed 200 OK in 106ms (Views: 101.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/schools" for 127.0.0.1 at 2017-07-25 11:54:44 +0100
+Processing by SchoolsController#index as */*
+  Parameters: {"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school_id"=>2, "school"=>{}}
+  [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+[active_model_serializers]   [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 1]]
+[active_model_serializers]   [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 1]]
+[active_model_serializers]   [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 2]]
+[active_model_serializers]   [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 2]]
+[active_model_serializers]   [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 3]]
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 3]]
+[active_model_serializers]   [1m[36mSolution Load (0.4ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 1]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 4]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 2]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (136.73ms)
+Completed 200 OK in 145ms (Views: 140.0ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/schools" for 127.0.0.1 at 2017-07-25 11:55:18 +0100
+Processing by SchoolsController#index as */*
+  Parameters: {"first_name"=>"Joe", "last_name"=>"Soom", "email"=>"joe@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school_id"=>2, "school"=>{}}
+  [1m[36mSchool Load (0.5ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+[active_model_serializers]   [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 1]]
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 1]]
+[active_model_serializers]   [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 2]]
+[active_model_serializers]   [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 2]]
+[active_model_serializers]   [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = $1[0m  [["school_id", 3]]
+[active_model_serializers]   [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."school_id" = $1[0m  [["school_id", 3]]
+[active_model_serializers]   [1m[36mSolution Load (0.4ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 1]]
+[active_model_serializers]   [1m[36mSolution Load (0.3ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 4]]
+[active_model_serializers]   [1m[36mSolution Load (9.7ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 2]]
+[active_model_serializers]   [1m[36mSolution Load (0.4ms)[0m  [1m[34mSELECT "solutions".* FROM "solutions" WHERE "solutions"."student_id" = $1[0m  [["student_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (158.24ms)
+Completed 200 OK in 171ms (Views: 156.7ms | ActiveRecord: 13.5ms)
+
+
