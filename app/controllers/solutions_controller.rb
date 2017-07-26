@@ -48,6 +48,6 @@ class SolutionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def solution_params
-      params.permit(:challenge_id, :student_id, :answer, :correct)
+      params.permit(:challenge_id, :student_id, :answer, :correct, :student_comment, :teacher_comment)
     end
 end
