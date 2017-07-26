@@ -4,5 +4,5 @@ class Student < ApplicationRecord
   has_many :solutions
   has_many :teachers, through: :school
   validates :email, presence: true
-validates :email, uniqueness: true, presence: true
+  validates :email, uniqueness: true, presence: true
 end

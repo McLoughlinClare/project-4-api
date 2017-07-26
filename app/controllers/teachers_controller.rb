@@ -11,7 +11,7 @@ class TeachersController < ApplicationController
 
   # GET /teachers/1
   def show
-    render json: @teacher
+    render json: @teacher, include: ['students.solutions']
   end
 
   # POST /teachers
